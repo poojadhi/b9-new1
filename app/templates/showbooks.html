@@ -1,0 +1,63 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+          <h2>All books</h2>
+          
+          
+          
+              <table class="image.png">
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">name</th>
+                    <th scope="col">price</th>
+                    <th scope="col">qty</th>
+                    <th scope="col">author</th>
+                    <th scope="col">is published</th>
+                    <th scope="col">is active</th>
+
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for book in allbooks %}
+                  <tr>
+                    <th scope="row">{{book.id}}</th>
+                    <td>{{book.name}}</td>
+                    <td>{{book.price}}</td>
+                    <td>{{book.qty}}</td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.is_published}}</td>
+                    <td>{{book.is_active}}</td>
+                    <td>
+                      <a href="{% url 'show_single_book' book.id%}" class="btn btn-primary">view</a>
+                      <a href="{% url 'edit_single_book' book.id%}" class="btn btn-warning">edit</a>
+                      <a href="{% url 'delete_single_book' book.id%}" class="btn btn-danger">delete</a>
+
+                    </td>
+                  </tr>
+                  {% endfor %}
+
+
+
+
+                
+                </tbody>
+              </table>
+                
+                
+              
+            </tbody>
+            
+          </table>
+      
+{% endblock %}
+
+
+
+
+
+
+
+</html>

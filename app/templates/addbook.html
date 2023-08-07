@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>add single book</h2>
+<form method="POST">
+    {% csrf_token %}
+    <label>name: </label><br>
+    <input type="text" name="nm"><br>
+
+    <label>price: </label><br>
+    <input type="number" name="prc"><br>
+
+    <label>quantity: </label><br>
+    <input type="number" name="qty"><br>
+
+    <label> Author: </label><br>
+    <input type="text" name="aut"><br>
+
+    <label>is_published:</label><br>
+    yes: <input type="radio" name="ispub" cheaked>
+    no:  <input type="radio" name="ispub"><br>
+
+    <input type="submit" class="btn btn-primary">
+
+</form>
+{% endblock%}
